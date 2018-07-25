@@ -21,19 +21,7 @@ import injectReducer from 'utils/injectReducer';
 //   makeSelectError,
 // } from 'containers/App/selectors';
 import Canvas from 'components/Canvas';
-// import H2 from 'components/H2';
-// import ReposList from 'components/ReposList';
-// import AtPrefix from './AtPrefix';
-// import CenteredSection from './CenteredSection';
-// import Form from './Form';
-// import Input from './Input';
-// import Section from './Section';
-// import messages from './messages';
-// import { loadRepos } from '../App/actions';
-// import { changeUsername } from './actions';
-// import { makeSelectUsername } from './selectors';
 import reducer from './reducer';
-// import saga from './saga';
 
 import { getCanvasPosition } from '../../utils/formulas';
 import { moveObjects } from './actions';
@@ -68,39 +56,7 @@ export class Game extends React.PureComponent {
 
 Game.propTypes = {
   angle: PropTypes.number.isRequired,
-  // error: PropTypes.oneOfType([PropTypes.object, PropTypes.bool]),
-  // repos: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
-  // onSubmitForm: PropTypes.func,
-  // username: PropTypes.string,
-  // onChangeUsername: PropTypes.func,
 };
-
-// export function mapDispatchToProps(dispatch) {
-//   return {
-//     onChangeUsername: evt => dispatch(changeUsername(evt.target.value)),
-//     onSubmitForm: evt => {
-//       if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-//       dispatch(loadRepos());
-//     },
-//   };
-// }
-
-// const mapStateToProps = createStructuredSelector({
-//   repos: makeSelectRepos(),
-//   username: makeSelectUsername(),
-//   loading: makeSelectLoading(),
-//   error: makeSelectError(),
-// });
-
-// const mapStateToProps = state => ({
-//   angle: state.angle,
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   moveObjects: mousePosition => {
-//     dispatch(moveObjects(mousePosition));
-//   },
-// });
 
 export function mapDispatchToProps(dispatch) {
   return {
@@ -110,10 +66,6 @@ export function mapDispatchToProps(dispatch) {
     dispatch,
   };
 }
-
-// const mapStateToProps = createSelector(makeSelectAngle(), angle => ({
-//   angle,
-// }));
 
 const mapStateToProps = createStructuredSelector({
   angle: makeSelectAngle(),
